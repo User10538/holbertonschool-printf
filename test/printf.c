@@ -114,11 +114,11 @@ int print_integer(va_list args)
 	{
 		count += _putchar('-');
 		/* convert to positive using int*/
-		num = -i;
+		num = (unsigned int)(-i);
 	}
 	else 
 	{
-		num = i;
+		num = (unsigned int)(i);
 	}
 
 	/* find the divisor, finds the largest power of 10*/

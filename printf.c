@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stdio.h>
 #include <unistd.h>
 
 /**
@@ -40,7 +39,7 @@ int _printf(const char *format, ...)
 			{
 				count += _putchar('%');
 			}
-			else /*invalid specifier */
+			else /*invalid specifer*/
 			{
 				count += _putchar('%');
 				count += _putchar(*format);

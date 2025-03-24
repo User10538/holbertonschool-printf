@@ -34,6 +34,7 @@ int _printf(const char *format, ...)
 
 			if (!*format)
 				return (-1);
+			/**return value of the function is added to count*/
 
 			count += handle_specifier(*format, args);
 		}

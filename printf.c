@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <limits.h>
 
 int print_char(va_list args);
 int print_string(va_list args);

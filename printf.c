@@ -109,7 +109,15 @@ int print_integer(va_list args)
 	int i = va_arg(args, int), count = 0, num;
 	int divisor = 1;
 
-	/* Handle negative numbers */
+	 if (i == INT_MIN)
+	 {
+		 count += _putchar('-');
+		 count += _putchar('2');
+		 num = 147483648;
+	 }
+	 
+	 else
+	    /* Handle negative numbers */
 	if (i < 0)
 	{
 		count += _putchar('-');

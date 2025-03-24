@@ -5,6 +5,7 @@
 
 int print_char(va_list args);
 int print_string(va_list args);
+int print_integer(va_list args);
 int handle_specifier(char specifier, va_list args);
 
 /**
@@ -58,6 +59,8 @@ int handle_specifier(char specifier, va_list args)
 		return (print_string(args));
 	if (specifier == '%')
 		return (_putchar('%'));
+	if (specifier == 'i' || specifier == 'd')
+		return (print_integer(args));
 
 	_putchar('%');
 	return (_putchar(specifier) + 1);
@@ -94,3 +97,52 @@ int print_string(va_list args)
 
 	return (count);
 }
+
+/**
+ * print_integer - to print i
+ * @args: the variable arg list
+ *
+ * Return: the number of int printed
+ */
+int print_integer(va_list args)
+{
+	int i = va_arg(args, int), count = 0, num;
+	int divisor = 1;
+
+	/* Handle negative numbers */
+	if (i < 0)
+	{
+		count += _putchar('-');
+		/* convert to positive using int*/
+		num = -i;
+	}
+	else 
+	{
+		num = i;
+	}
+
+	/* find the divisor, finds the largest power of 10*/
+
+	while ((num / divisor) >= 10)
+        divisor *= 10;
+
+	while (divisor)
+	{
+		/* get the leftmost digit of num*/
+		count += _putchar(num / divisor + '0');
+		num %= divisor; /*remove the printed digit*/
+
+		divisor /= 10; /*move to the next digit*/
+
+
+	}
+	
+	return (count);
+
+}
+
+
+
+
+
+

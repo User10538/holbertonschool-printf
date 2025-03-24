@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 			format++;
 			if(*format == 'c')
 				count += _putchar(va_arg(args, int));
-			
+
 			else if (*format == 's')
 			{
 				str = va_arg(args, char*);

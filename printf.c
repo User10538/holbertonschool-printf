@@ -1,12 +1,8 @@
 #include "main.h"
 #include <stdarg.h>
+#include <stdio.h>
 #include <unistd.h>
 
-/**
- * _printf - function that produces output according to a format
- * @format: characters to be printed
- * Return: Number of char printed.
- */
 
 int _printf(const char *format, ...)
 {
@@ -15,7 +11,7 @@ int _printf(const char *format, ...)
 	char *str;
 
 	if (format == NULL)
-		return (-1);
+	return (-1);
 
 	va_start(args, format);
 
@@ -24,33 +20,35 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			if (*format == 'c')
+
+			if (!*format )
+				return (-1);
+
+			if(*format == 'c')
 				count += _putchar(va_arg(args, int));
 
 			else if (*format == 's')
 			{
 				str = va_arg(args, char*);
 				if (str == NULL)
-					str = "(null)";
+				str = "(null)";
 				while (*str)
-					count += _putchar(*str++);
+				count += _putchar(*str++);
 			}
 			else if (*format == '%')
 			{
 				count += _putchar('%');
 			}
-			else /*invalid specifer*/
+			else /*invalid specifier */
 			{
 				count += _putchar('%');
 				count += _putchar(*format);
 			}
 		}
 		else
-		{
 			count += _putchar(*format);
-		}
 		format++;
 	}
 	va_end(args);
-	return (count);
+	return(count);
 }

@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <unistd.h>
+#include <limits.h>
 
 int print_char(va_list args);
 int print_string(va_list args);
@@ -20,6 +21,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 
+	/*check if the format is null*/
 	if (format == NULL)
 	return (-1);
 
@@ -27,6 +29,7 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
+		/*check for %*/
 		if (*format == '%')
 		{
 			format++;
@@ -34,6 +37,7 @@ int _printf(const char *format, ...)
 			if (!*format)
 				return (-1);
 
+			/*return value of the function is added to count*/
 			count += handle_specifier(*format, args);
 		}
 		else
@@ -109,14 +113,22 @@ int print_integer(va_list args)
 	int i = va_arg(args, int), count = 0, num;
 	int divisor = 1;
 
-	/* Handle negative numbers */
+	 if (i == INT_MIN)
+	 {
+		 count += _putchar('-');
+		 count += _putchar('2'); /* two decimal */
+		 num = 147483648;
+	 }
+
+	 else
+	    /* Handle negative numbers */
 	if (i < 0)
 	{
 		count += _putchar('-');
 		/* convert to positive using int*/
 		num = (unsigned int)(-i);
 	}
-	else 
+	else
 	{
 		num = (unsigned int)(i);
 	}
@@ -136,7 +148,7 @@ int print_integer(va_list args)
 
 
 	}
-	
+
 	return (count);
 
 }

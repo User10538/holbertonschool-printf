@@ -21,6 +21,7 @@ int _printf(const char *format, ...)
 	int count = 0;
 
 
+	/*check if the format is null*/
 	if (format == NULL)
 	return (-1);
 
@@ -28,14 +29,15 @@ int _printf(const char *format, ...)
 
 	while (*format)
 	{
+		/*check for %*/
 		if (*format == '%')
 		{
 			format++;
 
 			if (!*format)
 				return (-1);
-			/**return value of the function is added to count*/
 
+			/*return value of the function is added to count*/
 			count += handle_specifier(*format, args);
 		}
 		else
@@ -114,10 +116,10 @@ int print_integer(va_list args)
 	 if (i == INT_MIN)
 	 {
 		 count += _putchar('-');
-		 count += _putchar('2');
+		 count += _putchar('2'); /* two decimal */
 		 num = 147483648;
 	 }
-	 
+
 	 else
 	    /* Handle negative numbers */
 	if (i < 0)
@@ -126,7 +128,7 @@ int print_integer(va_list args)
 		/* convert to positive using int*/
 		num = (unsigned int)(-i);
 	}
-	else 
+	else
 	{
 		num = (unsigned int)(i);
 	}
@@ -146,7 +148,7 @@ int print_integer(va_list args)
 
 
 	}
-	
+
 	return (count);
 
 }

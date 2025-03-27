@@ -1,0 +1,62 @@
+NAME
+       _printf - function to produce output according to a format.
+
+SYNOPSIS
+       #include "main.h"
+
+       int _printf(const char *format, ...);
+
+DESCRIPTION
+       The _printf function produces output according to a specified format.
+       It is a minimal recreation of the standard printf function, handling 
+       basic format specifiers.
+
+       The format string can contain:
+       - Ordinary characters, which are printed as they appear.
+       - Format specifiers, which start with '%' and are replaced with 
+         corresponding arguments.
+
+SUPPORTED FORMAT SPECIFIERS
+       The _printf function supports the following format specifiers:
+
+       %c     Prints a single character.
+
+       %s     Prints a string.
+
+       %d     Prints a decimal integer.
+
+       %i     Prints an integer (same as %d).
+
+       %%     Prints a percent symbol '%'.
+
+RETURN VALUE
+       Returns the total number of characters printed, excluding the null 
+       byte used to end output to strings.
+
+EXAMPLES
+       Printing a string:
+           _printf("Hello, %s!\n", "world");
+           Output: Hello, world!
+
+       Printing a character:
+           _printf("The first letter is: %c\n", 'A');
+           Output: The first letter is: A
+
+       Printing an integer:
+           _printf("Number: %d\n", 42);
+           Output: Number: 42
+
+       Printing a percent symbol:
+           _printf("Print a percent: %%\n");
+           Output: Print a percent: %
+
+BUGS
+       - Does not support floating-point numbers.
+       - Does not handle width, precision, or length modifiers.
+       - Does not support advanced formatting features.
+
+SEE ALSO
+       printf(3), puts(3), putchar(3)
+
+AUTHOR
+Ying Tai, Jarryd Barrah, Sophie Kyi Oo

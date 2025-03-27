@@ -29,10 +29,23 @@ Not requiredcto have to handle the length modifiers
 
 3. % - 
 
-4. %d - 
+4. %d - Print a decimal (base 10) number: The corresponding argument should be an integer value.
 
-5. %i -
-
-
+5. %i - Prints an int (base 10): The corresponding argument should be an integer value.
 
 
+====Installation====
+
+1. Clone the repository.
+
+2. Git Configuration.
+
+
+====Compiling and executing:====
+
+
+
+====Credits====
+Ying Tai
+Jarryd Barrah
+Sophie kYi Oo

@@ -43,6 +43,8 @@ Not requiredcto have to handle the length modifiers
 
 ====Compiling and executing:====
 
+alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
+alex@ubuntu:~/c/printf$ ./printf
 
 
 ====Credits====

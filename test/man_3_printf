@@ -1,0 +1,38 @@
+Background Context
+
+/*****Write our own printf function.*****/
+
+====This function produces output according to a format====
+
+1. c
+2. s
+3. %
+4. d
+5. i
+
+====Features====
+
+Note : 
+
+Not required to reproduce the buffer handling of the C library printf function
+Not required to have to handle the flag characters
+Not required to have to handle field width
+Not required to have to handle precision
+Not requiredcto have to handle the length modifiers
+
+
+====It handles the following cases====
+
+1. %s - Prints a string: The corresponding argument should be a pointer to a null-terminated character array.
+
+2. %c - Prints a char: The corresponding argument should be a character value.
+
+3. % - 
+
+4. %d - 
+
+5. %i -
+
+
+
+

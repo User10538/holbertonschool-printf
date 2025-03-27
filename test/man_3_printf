@@ -27,7 +27,7 @@ Not requiredcto have to handle the length modifiers
 
 2. %c - Prints a char: The corresponding argument should be a character value.
 
-3. % - 
+3. % - Prints a %: To include a literal '%' character in your output, use the '%%' format specifier.
 
 4. %d - Print a decimal (base 10) number: The corresponding argument should be an integer value.
 

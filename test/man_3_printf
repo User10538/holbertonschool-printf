@@ -1,51 +1,67 @@
-Background Context
+NAME
+	 _printf - custom implementation of the standard printf function
 
-/*****Write our own printf function.*****/
+SYNOPSIS
+       #include "main.h"
 
-====This function produces output according to a format====
+       int _printf(const char *format, ...);
 
-1. c
-2. s
-3. %
-4. d
-5. i
+DESCRIPTION
+       The _printf function produces output according to a specified format.
+       It is a minimal recreation of the standard printf function, handling 
+       basic format specifiers.
 
-====Features====
+       The format string can contain:
+       - Ordinary characters, which are printed as they appear.
+       - Format specifiers, which start with '%' and are replaced with 
+         corresponding arguments.
 
-Note : 
+SUPPORTED FORMAT SPECIFIERS
+       The _printf function supports the following format specifiers:
 
-Not required to reproduce the buffer handling of the C library printf function
-Not required to have to handle the flag characters
-Not required to have to handle field width
-Not required to have to handle precision
-Not requiredcto have to handle the length modifiers
+       %c     Prints a single character.
+
+       %s     Prints a string.
+
+       %d     Prints a decimal integer.
+
+       %i     Prints an integer (same as %d).
+
+       %%     Prints a percent symbol '%'.
+
+RETURN VALUE
+       Returns the total number of characters printed, excluding the null 
+       byte used to end output to strings.
+
+EXAMPLES
+       Printing a string:
+           _printf("Hello, %s!\n", "world");
+           Output: Hello, world!
+
+       Printing a character:
+           _printf("The first letter is: %c\n", 'A');
+           Output: The first letter is: A
+
+       Printing an integer:
+           _printf("Number: %d\n", 42);
+           Output: Number: 42
+
+       Printing a percent symbol:
+           _printf("Print a percent: %%\n");
+           Output: Print a percent: %
+
+BUGS
+       - Does not support floating-point numbers.
+       - Does not handle width, precision, or length modifiers.
+       - Does not support advanced formatting features.
+
+SEE ALSO
+       printf(3), puts(3), putchar(3)
 
 
-====It handles the following cases====
-
-1. %s - Prints a string: The corresponding argument should be a pointer to a null-terminated character array.
-
-2. %c - Prints a char: The corresponding argument should be a character value.
-
-3. % - 
-
-4. %d - Print a decimal (base 10) number: The corresponding argument should be an integer value.
-
-5. %i - Prints an int (base 10): The corresponding argument should be an integer value.
 
 
-====Installation====
-
-1. Clone the repository.
-
-2. Git Configuration.
-
-
-====Compiling and executing:====
-
-
-
-====Credits====
+AUTHOR
 Ying Tai
 Jarryd Barrah
-Sophie kYi Oo
+Sophie Kyi Oo

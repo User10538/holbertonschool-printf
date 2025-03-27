@@ -1,13 +1,5 @@
 NAME
-<<<<<<< HEAD
-<<<<<<< HEAD
-	 _printf - custom implementation of the standard printf function
-=======
-       _printf - custom implementation of the standard printf function
->>>>>>> 6ac6f0ef67c01fe4e8909c18874274dc6a64a657
-=======
        _printf - function to produce output according to a format.
->>>>>>> f59322a204e3d2d0cf63c84ba05b2f3c2b3f074b
 
 SYNOPSIS
        #include "main.h"
@@ -66,15 +58,5 @@ BUGS
 SEE ALSO
        printf(3), puts(3), putchar(3)
 
-<<<<<<< HEAD
-
-
-
-AUTHOR
-Ying Tai
-Jarryd Barrah
-Sophie Kyi Oo
-=======
 AUTHOR
 Ying Tai, Jarryd Barrah, Sophie Kyi Oo
->>>>>>> 6ac6f0ef67c01fe4e8909c18874274dc6a64a657

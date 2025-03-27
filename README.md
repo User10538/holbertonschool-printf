@@ -1,47 +1,53 @@
-C - printf (GROUP PROJECT)
+Background Context
+
+/*****Write our own printf function.*****/
+
+====This function produces output according to a format====
+
+1. c
+2. s
+3. %
+4. d
+5. i
+
+====Features====
+
+Note :
+
+Not required to reproduce the buffer handling of the C library printf function
+Not required to have to handle the flag characters
+Not required to have to handle field width
+Not required to have to handle precision
+Not requiredcto have to handle the length modifiers
 
 
+====It handles the following cases====
 
-0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life
+1. %s - Prints a string: The corresponding argument should be a pointer to a null-terminated character array.
 
-Write a function that produces output according to a format.
+2. %c - Prints a char: The corresponding argument should be a character value.
 
-Prototype: int _printf(const char *format, ...);
-Returns: the number of characters printed (excluding the null byte used to end output to strings)
-write output to stdout, the standard output stream
-format is a character string. The format string is composed of zero or more directives. See man 3 printf for more detail. You need to handle the following conversion specifiers:
-c
-s
-%
-You don’t have to reproduce the buffer handling of the C library printf function
-You don’t have to handle the flag characters
-You don’t have to handle field width
-You don’t have to handle precision
-You don’t have to handle the length modifiers
+3. % - Prints a %: To include a literal '%' character in your output, use the '%%' format specifier.
+
+4. %d - Print a decimal (base 10) number: The corresponding argument should be an integer value.
+
+5. %i - Prints an int (base 10): The corresponding argument should be an integer value.
 
 
-1. Education is when you read the fine print. Experience is what you get if you don't
-Handle the following conversion specifiers:
+====Installation====
 
-d
-i
-You don’t have to handle the flag characters
-You don’t have to handle field width
-You don’t have to handle precision
-You don’t have to handle the length modifiers
+1. Clone the repository.
+
+2. Git Configuration.
 
 
+====Compiling and executing:====
 
-2. Just because it's in print doesn't mean it's the gospel
+alex@ubuntu:~/c/printf$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
+alex@ubuntu:~/c/printf$ ./printf
 
-Create a man page for your function.
 
-Repo:
-
-GitHub repository: holbertonschool-printf
-File: man_3_printf
-
-created by : 
-Sophie 
-Ying
-Jarryd 
+====Credits====
+Ying Tai
+Jarryd Barrah
+Sophie Kyi Oo
